@@ -36,7 +36,7 @@ namespace C__EndProject.DataContext.repositories
 
         public Employee Get(Predicate<Employee> filter)
         {
-            throw new NotImplementedException();
+            return DbContext.employees.Find(filter);
         }
 
         public List<Employee> GetAll(Predicate<Employee> filter = null)

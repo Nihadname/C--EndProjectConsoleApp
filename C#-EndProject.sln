@@ -5,9 +5,13 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#-EndProject", "C#-EndProject\C#-EndProject.csproj", "{67785CE9-4587-4884-8F13-59886A5A0997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#-EndProject.Domain", "C#-EndProject.Domain\C#-EndProject.Domain.csproj", "{96415D76-B052-4D69-A378-88253C51FEAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#-EndProject.Domain", "C#-EndProject.Domain\C#-EndProject.Domain.csproj", "{96415D76-B052-4D69-A378-88253C51FEAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#-EndProject.DataContext", "C#-EndProject.DataContext\C#-EndProject.DataContext.csproj", "{09310204-4ECB-4DF5-8518-A5358383266B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#-EndProject.DataContext", "C#-EndProject.DataContext\C#-EndProject.DataContext.csproj", "{09310204-4ECB-4DF5-8518-A5358383266B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#-EndProject.Business", "C#-EndProject.Business\C#-EndProject.Business.csproj", "{5A630B84-AF6C-4D4F-9194-45E53B3A11F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#-EndProject.Helpers", "C#-EndProject.Helpers\C#-EndProject.Helpers.csproj", "{970A3E77-9523-4EE0-8ECE-956189686B37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{09310204-4ECB-4DF5-8518-A5358383266B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09310204-4ECB-4DF5-8518-A5358383266B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09310204-4ECB-4DF5-8518-A5358383266B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A630B84-AF6C-4D4F-9194-45E53B3A11F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A630B84-AF6C-4D4F-9194-45E53B3A11F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A630B84-AF6C-4D4F-9194-45E53B3A11F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A630B84-AF6C-4D4F-9194-45E53B3A11F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970A3E77-9523-4EE0-8ECE-956189686B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970A3E77-9523-4EE0-8ECE-956189686B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970A3E77-9523-4EE0-8ECE-956189686B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970A3E77-9523-4EE0-8ECE-956189686B37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

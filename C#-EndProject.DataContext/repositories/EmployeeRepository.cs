@@ -41,12 +41,22 @@ namespace C__EndProject.DataContext.repositories
 
         public List<Employee> GetAll(Predicate<Employee> filter = null)
         {
-            throw new NotImplementedException();
+            return filter is null?DbContext.employees:DbContext.employees.FindAll(filter);  
         }
 
         public bool Update(Employee entity)
         {
-            throw new NotImplementedException();
+            try {
+                var ExistedEmployee = Get(s => s.Id == entity.Id);
+                ExistedEmployee = entity;
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
         }
     }
 }

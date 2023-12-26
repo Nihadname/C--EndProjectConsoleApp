@@ -24,7 +24,14 @@ namespace C__EndProject.DataContext.repositories
 
         public bool Delete(Employee entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbContext.employees.Remove(entity);
+                return true;
+            }catch(Exception)
+            {
+                throw;
+            }
         }
 
         public Employee Get(Predicate<Employee> filter)

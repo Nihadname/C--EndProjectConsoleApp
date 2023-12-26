@@ -14,7 +14,11 @@ namespace C__EndProject.DataContext.repositories
         {
             try
             {
-
+                DbContext.employees.Add(entity);
+                return true;
+            }catch (Exception)
+            {
+                throw;
             }
         }
 

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace C__EndProject.Helpers
 {
-    public enum MenusForEmployess
+    public  enum  MenusForDepartments
     {
-   
         
-            createEmployee=1 ,
-            getAllEmployee,
+            createdepartment= 3,
+            
         
     }
 }

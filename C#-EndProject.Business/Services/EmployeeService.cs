@@ -23,7 +23,7 @@ namespace C__EndProject.Business.Services
         public Employee Create(Employee employee, string DepartmentName)
         {
          
-            var ExistedDepartmenName=deparmentRepository.Get(s=>s.Name.Equals(employee.Name,StringComparison.OrdinalIgnoreCase));
+            var ExistedDepartmenName=deparmentRepository.Get(s=>s.Name.Equals(DepartmentName,StringComparison.OrdinalIgnoreCase));
             if (ExistedDepartmenName == null) return null;
             employee.department = ExistedDepartmenName;
             employee.Id=Counter++;

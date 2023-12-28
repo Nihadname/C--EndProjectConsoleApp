@@ -74,6 +74,6 @@ namespace C__EndProject.Business.Services
        return employeeRepository.GetAll();
         }
 
-       
+        
     }
 }

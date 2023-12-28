@@ -29,10 +29,14 @@ namespace C__EndProject.controller
             string departmentName=Console.ReadLine();
             helperForColor.changeTextColor(ConsoleColor.Green, "address daxil edin");
             string address= Console.ReadLine();
+            helperForColor.changeTextColor(ConsoleColor.Green, "age daxil edin");
+            int age =int.Parse(Console.ReadLine());
+
             Employee employee = new Employee();
             employee.Name = name;
             employee.SurName = SurName;
             employee.address = address;
+            employee.age = age;
             if(employeeService.Create(employee,departmentName) is null) {
                 helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
             }
@@ -85,7 +89,58 @@ namespace C__EndProject.controller
         }
         public void GetAllWithNames()
         {
+            helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
+            string Name = Console.ReadLine();
+            var Result= employeeService.GetAll(Name); 
+            foreach(var  result in Result)
+            {
+          
+                    helperForColor.changeTextColor(ConsoleColor.Green, $"{result.Name} {result.SurName}");
+                
 
+
+            }
+
+
+        }
+        public void getById()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "reqem daxil edin");
+            string number = Console.ReadLine();
+            bool result = int.TryParse(number, out int GroupCount);
+            var GettingById = employeeService.get(GroupCount);
+            Console.WriteLine(GettingById);
+        }
+        public void GetAllWithAge()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "yasi daxil edin daxil edin");
+            int age=int.Parse(Console.ReadLine());
+            var Result=employeeService.GetAll(age);
+            foreach( var result in Result)
+            {
+                Console.WriteLine(result);
+            }
+
+        }
+        public void GetAllWithDepartmentId()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "deparment id  daxil edin");
+            byte Id = byte.Parse(Console.ReadLine());
+            var Result=employeeService.GetAllWithDepartmentId(Id);
+            foreach( var result in Result)
+            {
+                Console.WriteLine(result);
+            }
+        }
+     public void GetAllWithDepartmentName()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
+            string DepartmentName = Console.ReadLine();
+            var Result=employeeService.GetAllWithDepartmentName(DepartmentName);
+            foreach( var result in Result)
+            {
+                Console.WriteLine(result);
+            }
         }
 
     }

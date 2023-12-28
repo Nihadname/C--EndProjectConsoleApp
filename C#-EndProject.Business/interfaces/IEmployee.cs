@@ -18,6 +18,7 @@ namespace C__EndProject.Business.interfaces
         List<Employee> GetAllWithDepartmentId(byte departmentId);
         List<Employee> GetAll(string departmentName);
         List<Employee> GetAllWithDepartmentName(string departmentName);
+        int GetCount();
 
 
 

@@ -12,6 +12,11 @@ namespace C__EndProject.Helpers
         
             createEmployee=1 ,
             getAllEmployee,
-        
+        GetAllWithNames,
+        getById,
+        GetAllWithAge,
+        GetAllWithDepartmentId,
+        GetAllWithDepartmentName
+
     }
 }

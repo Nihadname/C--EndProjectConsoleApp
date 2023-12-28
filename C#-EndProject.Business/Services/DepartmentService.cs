@@ -12,6 +12,7 @@ namespace C__EndProject.Business.Services
     public class DepartmentService : IDepartment
     {
         private readonly DeparmentRepository _Deparmentrepository;
+        private static int Count = 1;
 
         public DepartmentService()
         {
@@ -19,12 +20,15 @@ namespace C__EndProject.Business.Services
         }
         public Department Create(Department department)
         {
-            var ExistedDeparment=_Deparmentrepository.Get(s=>s.Id == department.Id);
-            if (ExistedDeparment is not null) return null;
+            var ExistedDeparmentWithName=_Deparmentrepository.Get(g => g.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase));
+            if (ExistedDeparmentWithName is not null) return null;
             bool Creating = _Deparmentrepository.Create(department);
+            department.Id=Count++;
             if (Creating)
             {
+                
                 return department;
+               
             }
             else
             {

@@ -63,11 +63,16 @@ namespace C__EndProject.controller
 
                     }
                 }
+                foreach (Employee emp in employeeGetsAll)
+                {
+                    Console.WriteLine(emp);
+                }
                
             }
             else
             {
                 File.WriteAllText(filePath, "Empty list");
+                helperForColor.changeTextColor(ConsoleColor.Red, "Empty list");
             }
 
 
@@ -146,6 +151,22 @@ namespace C__EndProject.controller
         {
        var result=employeeService.GetCount();
             Console.WriteLine(result);
+        }
+        public void DeleteEmployee()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");
+            int id = int.Parse(Console.ReadLine());
+            var result=employeeService.delete(id);
+            if(result is null)
+            {
+                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Red, "deleted");
+
+            }
+
         }
 
     }

@@ -9,7 +9,7 @@ namespace C__EndProject.Helpers
     public  enum  MenusForDepartments
     {
         
-            createdepartment= 9,
+            createdepartment= 10,
             
         
     }

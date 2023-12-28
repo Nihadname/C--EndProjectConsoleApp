@@ -17,7 +17,8 @@ namespace C__EndProject.Helpers
         GetAllWithAge,
         GetAllWithDepartmentId,
         GetAllWithDepartmentName,
-        GetAllEmployeesCount
+        GetAllEmployeesCount,
+        deleteEmployee
 
     }
 }

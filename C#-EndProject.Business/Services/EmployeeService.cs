@@ -39,7 +39,16 @@ namespace C__EndProject.Business.Services
 
         public Employee delete(int id)
         {
-            throw new NotImplementedException();
+            var ExistedEmployee=employeeRepository.Get(s=>s.Id==id);
+            if (ExistedEmployee is  null) return null;
+            if (employeeRepository.Delete(ExistedEmployee))
+            {
+                return ExistedEmployee;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Employee get(int id)

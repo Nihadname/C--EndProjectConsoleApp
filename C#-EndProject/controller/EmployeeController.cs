@@ -142,6 +142,11 @@ namespace C__EndProject.controller
                 Console.WriteLine(result);
             }
         }
+        public void GetAllEmployeesCount()
+        {
+       var result=employeeService.GetCount();
+            Console.WriteLine(result);
+        }
 
     }
  }

@@ -1,4 +1,5 @@
 ﻿using C__EndProject.Business.interfaces;
+using C__EndProject.DataContext;
 using C__EndProject.DataContext.repositories;
 using C__EndProject.Domain;
 using System;
@@ -25,6 +26,10 @@ namespace C__EndProject.Business.Services
          
             var ExistedDepartmenName=deparmentRepository.Get(s=>s.Name.Equals(DepartmentName,StringComparison.OrdinalIgnoreCase));
             if (ExistedDepartmenName == null) return null;
+            if (string.IsNullOrEmpty(employee.Name)||string.IsNullOrEmpty(employee.SurName)||string.IsNullOrEmpty(employee.address))
+            {
+                return null;
+            }
             employee.department = ExistedDepartmenName;
             employee.Id=Counter++;
             bool CreatingResult=employeeRepository.Create(employee);
@@ -74,6 +79,9 @@ namespace C__EndProject.Business.Services
        return employeeRepository.GetAll();
         }
 
-        
+        public int GetCount()
+        {
+          return GetAll().Count;
+        }
     }
 }

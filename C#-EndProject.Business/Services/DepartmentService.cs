@@ -22,6 +22,10 @@ namespace C__EndProject.Business.Services
         {
             var ExistedDeparmentWithName=_Deparmentrepository.Get(g => g.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase));
             if (ExistedDeparmentWithName is not null) return null;
+            if (string.IsNullOrEmpty(department.Name))
+            {
+                return null;
+            }
             bool Creating = _Deparmentrepository.Create(department);
             department.Id=Count++;
             if (Creating)

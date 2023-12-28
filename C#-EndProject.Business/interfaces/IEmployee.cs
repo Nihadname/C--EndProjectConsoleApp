@@ -15,9 +15,9 @@ namespace C__EndProject.Business.interfaces
         Employee delete(int id);
         List<Employee> GetAll();
         List<Employee> GetAll(int age);
-        List<Employee> GetAll(byte departmentId);
+        List<Employee> GetAllWithDepartmentId(byte departmentId);
         List<Employee> GetAll(string departmentName);
-        List<Employee> GetAllEmployessWithName(string Name);
+        List<Employee> GetAllWithDepartmentName(string departmentName);
 
 
 

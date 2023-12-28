@@ -48,18 +48,18 @@ namespace C__EndProject.Business.Services
 
         }
 
-        public List<Employee> GetAll(byte departmentId)
+        public List<Employee> GetAllWithDepartmentId(byte departmentId)
         {
             return employeeRepository.GetAll(s=>s.department.Id==departmentId);
            
         }
 
-        public List<Employee> GetAll(string departmentName)
+        public List<Employee> GetAllWithDepartmentName(string departmentName)
         {
            return employeeRepository.GetAll(s=>s.department.Name==departmentName);
         }
 
-        public List<Employee> GetAllEmployessWithName(string Name)
+        public List<Employee> GetAll(string Name)
         {
             return employeeRepository.GetAll(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
         }
@@ -73,5 +73,7 @@ namespace C__EndProject.Business.Services
         {
        return employeeRepository.GetAll();
         }
+
+       
     }
 }

@@ -1,8 +1,11 @@
-﻿using C__EndProject.Business.Services;
+﻿using C__EndProject.Business.interfaces;
+using C__EndProject.Business.Services;
 using C__EndProject.Domain;
 using C__EndProject.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,26 +44,49 @@ namespace C__EndProject.controller
 
 
         }
-        public void getAllEmployee() {
-            helperForColor.changeTextColor(ConsoleColor.Green, "employee lis:");
-            var employeeGetsAll=employeeService.GetAll();
-            if(employeeGetsAll.Count>0) {
-                foreach( Employee emp in employeeGetsAll) {
+        public void GetAllEmployee()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "Employee list:");
+            var employeeGetsAll = employeeService.GetAll();
+            string filePath = @"C:\Users\nihad\OneDrive\Desktop\ProjectDataCollector\Data.txt";
+            if (employeeGetsAll.Count > 0)
+            {
+                using(StreamWriter streamWriter = new StreamWriter(filePath))
+                {
+                    foreach (Employee emp in employeeGetsAll)
+                    {
+                        streamWriter.WriteLine($"Name{emp.Name} SurName{emp.SurName}");
 
-                    helperForColor.changeTextColor(ConsoleColor.Green, $"Name {emp.Name} SurName{emp.SurName} address{emp.address} departmentName {emp.department.Name}");
-
+                    }
                 }
-
+               
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Red, "empty lis");
-
+                File.WriteAllText(filePath, "Empty list");
             }
 
 
+            //if (File.Exists(filePath))
+            //{
+            //    try
+            //    {
+            //        Process.Start(filePath);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("An error occurred while opening the file: " + ex.Message);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("File does not exist.");
+            //}
+        }
+        public void GetAllWithNames()
+        {
 
         }
 
     }
-}
+ }

@@ -46,7 +46,16 @@ namespace C__EndProject.Business.Services
 
         public Department Delete(int id)
         {
-            throw new NotImplementedException();
+            var ExistedDepartment = _Deparmentrepository.Get(s => s.Id == id);
+            if (ExistedDepartment is null) return null;
+            if (_Deparmentrepository.Delete(ExistedDepartment)){
+                return ExistedDepartment;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
         public Department Get(int id)
@@ -66,12 +75,24 @@ namespace C__EndProject.Business.Services
 
         public List<Department> GetAll(int maxsize)
         {
-            throw new NotImplementedException();
+          return _Deparmentrepository.GetAll(s=>s.Capacity==maxsize);
         }
 
         public Department Uptade(int id, Department department)
         {
-            throw new NotImplementedException();
+            var ExistedDepartment=_Deparmentrepository.Get(s=>s.Id==id);
+            if (ExistedDepartment is null) return null;
+            var ExistedDepartmentWithItsName=_Deparmentrepository.Get(g=>g.Name.Equals(department.Name,StringComparison.OrdinalIgnoreCase) &&g.Id!=ExistedDepartment.Id);
+            if (ExistedDepartmentWithItsName is not null) return null;
+            if (!string.IsNullOrEmpty(department.Name))
+            {
+                ExistedDepartment.Name = department.Name;
+
+            }
+            //  ExistedDepartment.Name = department.Name;   
+ExistedDepartment.Capacity = department.Capacity;
+            if (_Deparmentrepository.Update(department)) return ExistedDepartment;
+            return null;
         }
     }
 }

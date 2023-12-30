@@ -12,7 +12,10 @@ namespace C__EndProject.Helpers
             createdepartment= 11,
             getAllDepartments,
         GetWithName,
-        GetDepartmentById
+        GetDepartmentById,
+        GetDepartmentByCapacity,
+        deleteDparments,
+        UptadeDepartment
 
 
 

@@ -97,5 +97,60 @@ namespace C__EndProject.controller
             }
 
         }
+        public void GetDepartmentByCapacity()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "reqem daxil edin");
+            string number = Console.ReadLine();
+            bool result = int.TryParse(number, out int GroupCount);
+            var GettingById = departmentService.GetAll(GroupCount);
+            foreach( var item in GettingById)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public void DeleteDepartment()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");
+            int id = int.Parse(Console.ReadLine());
+            var result = departmentService.Delete(id);
+            if(result is null)
+            {
+                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, "deleted");
+
+            }
+        }
+        public void UptadeDepartment()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");
+            int id = int.Parse(Console.ReadLine());
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter new department Name");
+            string name = Console.ReadLine();
+            
+            helperForColor.changeTextColor(ConsoleColor.Green, "enter new capacity ");
+            string capacity = Console.ReadLine();
+            bool result=int.TryParse(capacity, out int DepartmentCount);
+            Department department=new Department();
+            
+            department.Name = name;
+            department.Capacity = DepartmentCount;
+            var UpdatedDepartment = departmentService.Uptade(id, department);
+            if (result){
+                if (UpdatedDepartment is not null)
+                {
+                    helperForColor.changeTextColor(ConsoleColor.Red, $"{department.Name}  succesfully updated");
+                }
+                else
+                {
+                    helperForColor.changeTextColor(ConsoleColor.Green, "something went wrong");
+
+                }
+            }
+
+        }
     }
 }

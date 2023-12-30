@@ -26,14 +26,17 @@ namespace C__EndProject.Business.Services
             {
                 return null;
             }
+          
+
             bool Creating = _Deparmentrepository.Create(department);
-            department.Id=Count++;
-            if (Creating)
+            if (Creating )
             {
+            
                 
-                return department;
-               
-            }
+                    department.Id = Count++;
+                    return department;
+                
+               }
             else
             {
                 return null;
@@ -48,7 +51,7 @@ namespace C__EndProject.Business.Services
 
         public Department Get(int id)
         {
-            throw new NotImplementedException();
+            return _Deparmentrepository.Get(s=>s.Id==id);
         }
 
         public List<Department> GetAll()

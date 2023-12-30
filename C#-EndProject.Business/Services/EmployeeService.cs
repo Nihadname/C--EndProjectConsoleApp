@@ -30,10 +30,21 @@ namespace C__EndProject.Business.Services
             {
                 return null;
             }
+         
+            if (GetCount() >= ExistedDepartmenName.Capacity)
+            {
+                return null; 
+            }
             employee.department = ExistedDepartmenName;
             employee.Id=Counter++;
+            
             bool CreatingResult=employeeRepository.Create(employee);
-            if (!CreatingResult) return null;
+
+            if (!CreatingResult) {
+                return null;
+
+            }
+            
             return employee;
         }
 

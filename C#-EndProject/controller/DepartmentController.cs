@@ -77,16 +77,22 @@ namespace C__EndProject.controller
             }
 
         }
-        public void GetAllWithName() {
+        public void GetWithName() {
             helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
             string Name = Console.ReadLine();
-            var Result = departmentService.GetAll(Name);
-            foreach (var result in Result)
+            var Result = departmentService.Get(Name);
+            Console.WriteLine(Result);
+        }
+        public void GetDepartmentById()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Green, "reqem daxil edin");
+            string number = Console.ReadLine();
+            bool result = int.TryParse(number, out int GroupCount);
+            var GettingById = departmentService.Get(GroupCount);
+            Console.WriteLine(GettingById);
+                if(GettingById == null)
             {
-
-                helperForColor.changeTextColor(ConsoleColor.Green, $"Name: {result.Name} capacity: {result.Capacity}");
-
-
+                helperForColor.changeTextColor(ConsoleColor.Red, "bele bir department id yoxdur");
 
             }
 

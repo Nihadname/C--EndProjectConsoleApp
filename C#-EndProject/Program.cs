@@ -29,7 +29,7 @@ helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bo
 
 while (true)
 {
-    helperForColor.changeTextColor(ConsoleColor.Red, "1.createEmployee"+ "2.getAllEmployees"+ "3.GetAllWithNames" + "4.getById"+ "5.GetAllWithAge"+ "6.GetAllWithDepartmentId"+ "7.GetAllWithDepartmentName"+ "8.GetAllEmployeesCount" +"9.deleteEmployee" + "10.UpdateEmployee" + "11.CreateDeparmente" +"12.GetAllDepartment"+ "13.GetAllWithName" + "0.left menu");
+    helperForColor.changeTextColor(ConsoleColor.Red, "1.createEmployee"+ "2.getAllEmployees"+ "3.GetAllWithNames" + "4.getById"+ "5.GetAllWithAge"+ "6.GetAllWithDepartmentId"+ "7.GetAllWithDepartmentName"+ "8.GetAllEmployeesCount" +"9.deleteEmployee" + "10.UpdateEmployee" + "11.CreateDeparmente" +"12.GetAllDepartment"+ "13.GetAllWithName"+ "14.GetDepartmentById" + "0.left menu");
 
     string menu = Console.ReadLine();
     bool result = int.TryParse(menu, out int intMenu);
@@ -73,8 +73,12 @@ while (true)
             case (int)MenusForDepartments.getAllDepartments:
                 departmentController.GetAllDepartment();
                 break;
-               
-           
+            case (int)MenusForDepartments.GetWithName:
+                departmentController.GetWithName();
+                break;
+            case (int)MenusForDepartments.GetDepartmentById:
+                departmentController.GetDepartmentById();
+                break;
         }
     }
     else if (intMenu == 0)

@@ -14,7 +14,7 @@ namespace C__EndProject.Business.interfaces
         Department Delete(int id);
             Department Get(int id);
       List<Department> GetAll();
-        List<Department> GetAll(string Name);
+        Department Get(string Name);
         List<Department> GetAll(int maxsize);
 
     }

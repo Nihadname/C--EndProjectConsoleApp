@@ -59,9 +59,9 @@ namespace C__EndProject.Business.Services
             return _Deparmentrepository.GetAll();
         }
 
-        public List<Department> GetAll(string Name)
+        public Department Get(string Name)
         {
-            return _Deparmentrepository.GetAll(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
+            return _Deparmentrepository.Get(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
         }
 
         public List<Department> GetAll(int maxsize)

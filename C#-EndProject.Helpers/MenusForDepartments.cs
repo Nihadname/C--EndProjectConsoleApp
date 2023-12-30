@@ -11,7 +11,8 @@ namespace C__EndProject.Helpers
         
             createdepartment= 11,
             getAllDepartments,
-        GetAllWithName
+        GetWithName,
+        GetDepartmentById
 
 
 

@@ -16,6 +16,8 @@ namespace C__EndProject.Business.interfaces
       List<Department> GetAll();
         Department Get(string Name);
         List<Department> GetAll(int maxsize);
+        
+
 
     }
 }

@@ -29,11 +29,33 @@ helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bo
 
 while (true)
 {
-    helperForColor.changeTextColor(ConsoleColor.Red, "1.createEmployee"+ "2.getAllEmployees"+ "3.GetAllWithNames" + "4.getById"+ "5.GetAllWithAge"+ "6.GetAllWithDepartmentId"+ "7.GetAllWithDepartmentName"+ "8.GetAllEmployeesCount" +"9.deleteEmployee" + "10.UpdateEmployee" + "11.CreateDeparmente" +"12.GetAllDepartment"+ "13.GetAllWithName"+ "14.GetDepartmentById"+ "15.GetDepartmentByCapacity"+ "16.deleteDepartment" + "UptadeDepartman" + "0.left menu");
+    helperForColor.changeTextColor(ConsoleColor.Red,
+    "1. Create Employee\n" +
+    "2. Get All Employees\n" +
+    "3. Get All With Names\n" +
+    "4. Get By ID\n" +
+    "5. Get All With Age\n" +
+    "6. Get All With Department ID\n" +
+    "7. Get All With Department Name\n" +
+    "8. Get All Employees Count\n" +
+    "9. Delete Employee\n" +
+    "10. Update Employee\n" +
+    "11. General Revenue Controller\n" +
+    "12. Get All With Salary\n" +
+    "13. Create Department\n" +
+    "14. Get All Departments\n" +
+    "15. Get All With Name\n" +
+    "16. Get Department By ID\n" +
+    "17. Get Department By Capacity\n" +
+    "18. Delete Department\n" +
+    "19. Update Department\n" +
+    "0. Left Menu"
+);
+
 
     string menu = Console.ReadLine();
     bool result = int.TryParse(menu, out int intMenu);
-    if (result && intMenu > 0 && intMenu < 19)
+    if (result && intMenu > 0 && intMenu < 18)
     {
         switch(intMenu)
         {
@@ -67,6 +89,12 @@ while (true)
             case (int)MenusForEmployess.UpdateEmployee:
                 employeeController.UpdateEmployee();
                 break;
+            case (int)MenusForEmployess.GeneralRevenueController:
+                employeeController.GeneralRevenueController();
+                break;
+            case (int)MenusForEmployess.getAllWithSalary:
+                employeeController.getAllWithSalary();
+                break;
             case (int)MenusForDepartments.createdepartment:
                 departmentController.createDepartment();
                 break;
@@ -88,6 +116,7 @@ while (true)
                 case (int)MenusForDepartments.UptadeDepartment:
                 departmentController.UptadeDepartment();
                 break;
+           
         }
     }
     else if (intMenu == 0)

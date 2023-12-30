@@ -20,6 +20,9 @@ namespace C__EndProject.Helpers
         GetAllEmployeesCount,
         deleteEmployee,
         UpdateEmployee,
+        GeneralRevenueController,
+        getAllWithSalary
+
 
     }
 }

@@ -13,6 +13,8 @@ namespace C__EndProject.Business.Services
     {
         private readonly DeparmentRepository _Deparmentrepository;
         private static int Count = 1;
+       
+
 
         public DepartmentService()
         {
@@ -34,6 +36,7 @@ namespace C__EndProject.Business.Services
             
                 
                     department.Id = Count++;
+
                     return department;
                 
                }
@@ -94,5 +97,7 @@ ExistedDepartment.Capacity = department.Capacity;
             if (_Deparmentrepository.Update(department)) return ExistedDepartment;
             return null;
         }
+
+        
     }
 }

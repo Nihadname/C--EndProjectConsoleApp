@@ -13,10 +13,11 @@ namespace C__EndProject.Domain
         public string SurName { get; set; }
         public int age { get; set; }
         public string address { get; set; }
+        public int Salary { get; set; }
         public Department department { get; set; }
         public override string ToString()
         {
-            return $" ad {Name}  soyad:{SurName} id: {Id}";
+            return $" ad {Name}  soyad:{SurName} id: {Id} salary{Salary}";
         }
     }
 }

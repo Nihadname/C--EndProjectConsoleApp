@@ -48,5 +48,48 @@ namespace C__EndProject.controller
 
             }
         }
+        public void GetAllDepartment(){
+
+
+            helperForColor.changeTextColor(ConsoleColor.Green, "Deparment list:");
+            var DepartmentGetsAll = departmentService.GetAll();
+            string filePath = @"C:\Users\nihad\OneDrive\Desktop\ProjectDataCollector\Data1.txt";
+            if (DepartmentGetsAll.Count > 0)
+            {
+                using (StreamWriter streamWriter = new StreamWriter(filePath))
+                {
+                    foreach (var emp in DepartmentGetsAll)
+                    {
+                        streamWriter.WriteLine($"Name{emp.Name} SurName{emp.Capacity}");
+
+                    }
+                }
+                foreach (var emp in DepartmentGetsAll)
+                {
+                    Console.WriteLine(emp);
+                }
+
+            }
+            else
+            {
+                File.WriteAllText(filePath, "Empty list");
+                helperForColor.changeTextColor(ConsoleColor.Red, "Empty list");
+            }
+
+        }
+        public void GetAllWithName() {
+            helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
+            string Name = Console.ReadLine();
+            var Result = departmentService.GetAll(Name);
+            foreach (var result in Result)
+            {
+
+                helperForColor.changeTextColor(ConsoleColor.Green, $"Name: {result.Name} capacity: {result.Capacity}");
+
+
+
+            }
+
+        }
     }
 }

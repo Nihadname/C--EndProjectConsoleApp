@@ -11,5 +11,10 @@ namespace C__EndProject.Domain
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
+
+        public override string ToString()
+        {
+            return $"Name: {Name} capacity: {Capacity}";
+        }
     }
 }

@@ -80,7 +80,31 @@ namespace C__EndProject.Business.Services
 
         public Employee Update(int id, Employee employee, string DepartmentName)
         {
-            throw new NotImplementedException();
+            var ExistedEmployee=employeeRepository.Get(s=>s.Id == id);
+            if (ExistedEmployee is null) return null;
+            var ExistedDeparment=deparmentRepository.Get(s=>s.Id == id);
+            if (ExistedDeparment is null) return null;
+            if(!string.IsNullOrEmpty(employee.Name))
+            {
+                ExistedEmployee.Name = employee.Name;
+            }
+            if(!string.IsNullOrEmpty(employee.SurName)) { 
+            
+            ExistedEmployee.SurName= employee.SurName;
+            }
+            if(!string.IsNullOrEmpty(employee.address))
+            {
+                ExistedEmployee.address = employee.address;
+            }
+            employee.department = ExistedDeparment;
+            if (employeeRepository.Update(ExistedEmployee))
+            {
+                return ExistedEmployee;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public List<Employee> GetAll()

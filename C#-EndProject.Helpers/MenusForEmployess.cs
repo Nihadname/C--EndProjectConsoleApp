@@ -18,7 +18,8 @@ namespace C__EndProject.Helpers
         GetAllWithDepartmentId,
         GetAllWithDepartmentName,
         GetAllEmployeesCount,
-        deleteEmployee
+        deleteEmployee,
+        UpdateEmployee,
 
     }
 }

@@ -53,12 +53,12 @@ namespace C__EndProject.Business.Services
 
         public List<Department> GetAll()
         {
-            throw new NotImplementedException();
+            return _Deparmentrepository.GetAll();
         }
 
         public List<Department> GetAll(string Name)
         {
-            throw new NotImplementedException();
+            return _Deparmentrepository.GetAll(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
         }
 
         public List<Department> GetAll(int maxsize)

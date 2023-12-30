@@ -29,7 +29,7 @@ helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bo
 
 while (true)
 {
-    helperForColor.changeTextColor(ConsoleColor.Red, "1.createEmployee"+ "2.getAllEmployees"+ "3.GetAllWithNames" + "4.getById"+ "5.GetAllWithAge"+ "6.GetAllWithDepartmentId"+ "7.GetAllWithDepartmentName"+ "8.GetAllEmployeesCount" +"9.deleteEmployee" +"10.CreateDeparment" + "0.left menu");
+    helperForColor.changeTextColor(ConsoleColor.Red, "1.createEmployee"+ "2.getAllEmployees"+ "3.GetAllWithNames" + "4.getById"+ "5.GetAllWithAge"+ "6.GetAllWithDepartmentId"+ "7.GetAllWithDepartmentName"+ "8.GetAllEmployeesCount" +"9.deleteEmployee" + "10.UpdateEmployee" + "11.CreateDeparmente" + "0.left menu");
 
     string menu = Console.ReadLine();
     bool result = int.TryParse(menu, out int intMenu);
@@ -63,6 +63,9 @@ while (true)
                 break;
             case (int)MenusForEmployess.deleteEmployee:
                 employeeController.DeleteEmployee();
+                break;
+            case (int)MenusForEmployess.UpdateEmployee:
+                employeeController.UpdateEmployee();
                 break;
             case (int)MenusForDepartments.createdepartment:
                 departmentController.createDepartment();

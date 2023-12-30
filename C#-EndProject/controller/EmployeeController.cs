@@ -168,6 +168,34 @@ namespace C__EndProject.controller
             }
 
         }
+       public void UpdateEmployee()
+        {
+
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");
+            int id = int.Parse(Console.ReadLine());
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter new employee Name");
+            string name = Console.ReadLine();
+            helperForColor.changeTextColor(ConsoleColor.Yellow, "enter new employee SurName");
+            string Surname = Console.ReadLine();
+            helperForColor.changeTextColor(ConsoleColor.Green, "enter DepartmentName ");
+            string Departmentname = Console.ReadLine();
+            helperForColor.changeTextColor(ConsoleColor.Green, "enter employee adress ");
+            string adrress = Console.ReadLine();
+            Employee employee= new Employee();
+            employee.Name = name;
+            employee.SurName = Surname;
+            employee.address = adrress;
+            if(employeeService.Update(id, employee,Departmentname) is null) {
+                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, "succesfully updated");
+
+            }
+
+
+        }
 
     }
  }

@@ -182,15 +182,15 @@ namespace C__EndProject.controller
             string name = Console.ReadLine();
             helperForColor.changeTextColor(ConsoleColor.Yellow, "enter new employee SurName");
             string Surname = Console.ReadLine();
-            helperForColor.changeTextColor(ConsoleColor.Green, "enter DepartmentName ");
-            string Departmentname = Console.ReadLine();
+          //  helperForColor.changeTextColor(ConsoleColor.Green, "enter DepartmentName ");
+          //  string Departmentname = Console.ReadLine();
             helperForColor.changeTextColor(ConsoleColor.Green, "enter employee adress ");
             string adrress = Console.ReadLine();
             Employee employee= new Employee();
             employee.Name = name;
             employee.SurName = Surname;
             employee.address = adrress;
-            if(employeeService.Update(id, employee,Departmentname) is null) {
+            if(employeeService.Update(id, employee) is null) {
                 helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
             }
             else

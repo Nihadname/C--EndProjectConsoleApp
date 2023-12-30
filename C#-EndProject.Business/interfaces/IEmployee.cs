@@ -10,7 +10,7 @@ namespace C__EndProject.Business.interfaces
     public interface IEmployee
     {
         Employee  Create(Employee employee,string DepartmentName);
-        Employee Update(int id,Employee employee, string DepartmentName);
+        Employee Update(int id,Employee employee);
         Employee get(int id);
         Employee delete(int id);
         List<Employee> GetAll();

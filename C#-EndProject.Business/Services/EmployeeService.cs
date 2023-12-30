@@ -95,7 +95,7 @@ namespace C__EndProject.Business.Services
             return employeeRepository.GetAll(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
         }
 
-        public Employee Update(int id, Employee employee, string DepartmentName)
+        public Employee Update(int id, Employee employee)
         {
             var ExistedEmployee=employeeRepository.Get(s=>s.Id == id);
             if (ExistedEmployee is null) return null;

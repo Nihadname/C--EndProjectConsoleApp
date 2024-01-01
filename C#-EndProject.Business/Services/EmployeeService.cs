@@ -95,11 +95,11 @@ namespace C__EndProject.Business.Services
             return employeeRepository.GetAll(s=>s.Name.Equals(Name,StringComparison.OrdinalIgnoreCase));
         }
 
-        public Employee Update(int id, Employee employee)
+        public Employee Update(int id, Employee employee,string groupName)
         {
             var ExistedEmployee=employeeRepository.Get(s=>s.Id == id);
             if (ExistedEmployee is null) return null;
-            var ExistedDeparment=deparmentRepository.Get(s=>s.Id == id);
+            var ExistedDeparment=deparmentRepository.Get(s=>s.Name == groupName);
             if (ExistedDeparment is null) return null;
             if(!string.IsNullOrEmpty(employee.Name))
             {

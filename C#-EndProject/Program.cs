@@ -44,7 +44,7 @@ while (true)
     "12. Get All With Salary\n" +
     "13. Create Department\n" +
     "14. Get All Departments\n" +
-    "15. Get All With Name\n" +
+    "15. Get  With Name\n" +
     "16. Get Department By ID\n" +
     "17. Get Department By Capacity\n" +
     "18. Delete Department\n" +

@@ -36,8 +36,8 @@ namespace C__EndProject.Business.Services
             {
                 return null;
             }
-         
-            if (GetCount() >= ExistedDepartmenName.Capacity)
+
+            if (GetCount((byte)ExistedDepartmenName.Id) >= ExistedDepartmenName.Capacity)
             {
                 return null; 
             }
@@ -114,6 +114,7 @@ namespace C__EndProject.Business.Services
                 ExistedEmployee.address = employee.address;
             }
             employee.department = ExistedDeparment;
+                    ExistedEmployee.Salary = employee.Salary;
             if (employeeRepository.Update(ExistedEmployee))
             {
                 return ExistedEmployee;
@@ -134,6 +135,11 @@ namespace C__EndProject.Business.Services
             return GetAll().Count;
 
         }
+        public int GetCount(byte departmentId)
+        {
+            return GetAllWithDepartmentId(departmentId).Count;
+        }
+
         public void HireEmployeeAndUpdateRevenue(Employee employee)
         {
             double salary = employee.Salary;

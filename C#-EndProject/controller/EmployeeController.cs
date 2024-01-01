@@ -157,6 +157,13 @@ namespace C__EndProject.controller
        var result=employeeService.GetCount();
             Console.WriteLine(result);
         }
+        public void GetAllEmployeesCountById()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");
+            byte id = byte.Parse(Console.ReadLine());
+
+            int count = employeeService.GetCount(id);
+        }
         public void DeleteEmployee()
         {
             helperForColor.changeTextColor(ConsoleColor.Red, "enter Id");

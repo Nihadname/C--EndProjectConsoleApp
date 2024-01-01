@@ -19,6 +19,9 @@ namespace C__EndProject.Business.interfaces
         List<Employee> GetAll(string departmentName);
         List<Employee> GetAllWithDepartmentName(string departmentName);
         int GetCount();
+        int GetCount(byte departmentId);
+        
+
         void HireEmployeeAndUpdateRevenue(Employee employee);
       void  GeneralRevenueController(int num);
         List<Employee> getAllWithSalary(int num);

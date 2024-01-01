@@ -30,7 +30,7 @@ helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bo
 while (true)
 {
     helperForColor.changeTextColor(ConsoleColor.Red,
-    "1. Create Employee\n" +
+   "1. Create Employee\n" +
     "2. Get All Employees\n" +
     "3. Get All With Names\n" +
     "4. Get By ID\n" +
@@ -38,17 +38,18 @@ while (true)
     "6. Get All With Department ID\n" +
     "7. Get All With Department Name\n" +
     "8. Get All Employees Count\n" +
-    "9. Delete Employee\n" +
-    "10. Update Employee\n" +
-    "11. General Revenue Controller\n" +
-    "12. Get All With Salary\n" +
-    "13. Create Department\n" +
-    "14. Get All Departments\n" +
-    "15. Get  With Name\n" +
-    "16. Get Department By ID\n" +
-    "17. Get Department By Capacity\n" +
-    "18. Delete Department\n" +
-    "19. Update Department\n" +
+    "9. Get Employees Count By ID\n" +
+    "10. Delete Employee\n" +
+    "11. Update Employee\n" +
+    "12. General Revenue Controller\n" +
+    "13. Get All With Salary\n" +
+    "14. Create Department\n" +
+    "15. Get All Departments\n" +
+    "16. Get Department With Name\n" +
+    "17. Get Department By ID\n" +
+    "18. Get Department By Capacity\n" +
+    "19. Delete Department\n" +
+    "20. Update Department\n" +
     "0. Left Menu"
 );
 
@@ -82,6 +83,9 @@ while (true)
                 break;
             case (int)MenusForEmployess.GetAllEmployeesCount:
                 employeeController.GetAllEmployeesCount();
+                break;
+            case (int)MenusForEmployess.GetAllWithEmployessCountById:
+                employeeController.GetAllEmployeesCountById();
                 break;
             case (int)MenusForEmployess.deleteEmployee:
                 employeeController.DeleteEmployee();

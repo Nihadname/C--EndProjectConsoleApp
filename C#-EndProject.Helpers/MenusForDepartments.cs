@@ -9,7 +9,7 @@ namespace C__EndProject.Helpers
     public  enum  MenusForDepartments
     {
         
-            createdepartment= 13,
+            createdepartment= 14,
             getAllDepartments,
         GetWithName,
         GetDepartmentById,

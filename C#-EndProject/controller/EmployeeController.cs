@@ -42,11 +42,11 @@ namespace C__EndProject.controller
             employee.age = age;
             employee.Salary = salary;
             if(employeeService.Create(employee,departmentName) is null) {
-                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+                helperForColor.changeTextColor(ConsoleColor.Red,MessagesForCases.ErroMessage);
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Green, "succesfully created");
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagePartWhichIsForPositiveCases+"created");
                 employeeService.HireEmployeeAndUpdateRevenue(employee); // Hire the employee and adjust revenue
 
             }
@@ -76,8 +76,8 @@ namespace C__EndProject.controller
             }
             else
             {
-                File.WriteAllText(filePath, "Empty list");
-                helperForColor.changeTextColor(ConsoleColor.Red, "Empty list");
+                File.WriteAllText(filePath, MessagesForCases.MessagesForEmptyCases);
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.MessagesForEmptyCases);
             }
 
 
@@ -101,16 +101,23 @@ namespace C__EndProject.controller
         {
             helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
             string Name = Console.ReadLine();
-            var Result= employeeService.GetAll(Name); 
-            foreach(var  result in Result)
+            var Result= employeeService.GetAll(Name);
+            if (Result.Count > 0)
             {
-          
-                    helperForColor.changeTextColor(ConsoleColor.Green, $"{result.Name} {result.SurName}");
-                
+                foreach (var result in Result)
+                {
 
+                    helperForColor.changeTextColor(ConsoleColor.Green, $"{result.Name} {result.SurName}");
+
+
+
+                }
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
 
             }
-
 
         }
         public void getById()
@@ -126,9 +133,17 @@ namespace C__EndProject.controller
             helperForColor.changeTextColor(ConsoleColor.Green, "yasi daxil edin daxil edin");
             int age=int.Parse(Console.ReadLine());
             var Result=employeeService.GetAll(age);
-            foreach( var result in Result)
+            if (Result.Count > 0)
             {
-                Console.WriteLine(result);
+                foreach (var result in Result)
+                {
+                    Console.WriteLine(result);
+                }
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
+
             }
 
         }
@@ -137,9 +152,17 @@ namespace C__EndProject.controller
             helperForColor.changeTextColor(ConsoleColor.Green, "deparment id  daxil edin");
             byte Id = byte.Parse(Console.ReadLine());
             var Result=employeeService.GetAllWithDepartmentId(Id);
-            foreach( var result in Result)
+            if (Result.Count > 0)
             {
-                Console.WriteLine(result);
+                foreach (var result in Result)
+                {
+                    Console.WriteLine(result);
+                }
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
+
             }
         }
      public void GetAllWithDepartmentName()
@@ -147,9 +170,17 @@ namespace C__EndProject.controller
             helperForColor.changeTextColor(ConsoleColor.Green, "ad daxil edin");
             string DepartmentName = Console.ReadLine();
             var Result=employeeService.GetAllWithDepartmentName(DepartmentName);
-            foreach( var result in Result)
+            if (Result.Count > 0)
             {
-                Console.WriteLine(result);
+                foreach (var result in Result)
+                {
+                    Console.WriteLine(result);
+                }
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
+
             }
         }
         public void GetAllEmployeesCount()
@@ -163,6 +194,7 @@ namespace C__EndProject.controller
             byte id = byte.Parse(Console.ReadLine());
 
             int count = employeeService.GetCount(id);
+            Console.WriteLine(count);
         }
         public void DeleteEmployee()
         {
@@ -171,11 +203,11 @@ namespace C__EndProject.controller
             var result=employeeService.delete(id);
             if(result is null)
             {
-                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.ErroMessage);
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Red, "deleted");
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.MessagePartWhichIsForPositiveCases+"deleted");
 
             }
 
@@ -203,11 +235,11 @@ namespace C__EndProject.controller
             employee.Salary = salary;
 
             if(employeeService.Update(id, employee,Departmentname) is null) {
-                helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.ErroMessage);
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Green, "succesfully updated");
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagePartWhichIsForPositiveCases+" updated");
 
             }
 
@@ -221,9 +253,9 @@ namespace C__EndProject.controller
 
             int number = int.Parse(Console.ReadLine());
 
-            employeeService.GeneralRevenueController(number); // Simulate time passing and update revenue
+            employeeService.GeneralRevenueController(number); 
 
-            // You can optionally print or log the results here
+            
             Console.WriteLine("Simulation completed for " + number + " months.");
             List<Employee> employees = employeeService.GetAll();
             
@@ -231,7 +263,7 @@ namespace C__EndProject.controller
             {
                 Console.WriteLine($"Employee: {emp.Name} {emp.SurName}, Salary: {emp.Salary}");
             }
-            // You might also consider showing the updated revenue if it's accessible from the service layer
+            
             Console.WriteLine("Updated revenue: " + employeeService.GetUpdatedRevenue());
         }
       public  void getAllWithSalary()
@@ -239,11 +271,18 @@ namespace C__EndProject.controller
             helperForColor.changeTextColor(ConsoleColor.Red, "Enter the number:");
             int number= int.Parse(Console.ReadLine());
             var result = employeeService.getAllWithSalary(number);
-            foreach( var emp in result)
+            if (result.Count > 0)
             {
-                Console.WriteLine(emp);
+                foreach (var emp in result)
+                {
+                    Console.WriteLine(emp);
+                }
             }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
 
+            }
         }
     }
 }

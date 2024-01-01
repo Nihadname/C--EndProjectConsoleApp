@@ -18,6 +18,7 @@ namespace C__EndProject.Helpers
         GetAllWithDepartmentId,
         GetAllWithDepartmentName,
         GetAllEmployeesCount,
+        GetAllWithEmployessCountById,
         deleteEmployee,
         UpdateEmployee,
         GeneralRevenueController,

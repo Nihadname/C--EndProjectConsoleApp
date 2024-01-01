@@ -72,8 +72,8 @@ namespace C__EndProject.controller
             }
             else
             {
-                File.WriteAllText(filePath, "Empty list");
-                helperForColor.changeTextColor(ConsoleColor.Red, "Empty list");
+                File.WriteAllText(filePath, MessagesForCases.MessagesForEmptyCases);
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.MessagesForEmptyCases);
             }
 
         }

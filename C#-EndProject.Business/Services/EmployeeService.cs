@@ -85,7 +85,12 @@ namespace C__EndProject.Business.Services
 
         public List<Employee> GetAllWithDepartmentId(byte departmentId)
         {
+            if (employeeRepository.GetAll(s => s.department.Id == departmentId) == null)
+            {
+                return null;
+            }
             return employeeRepository.GetAll(s=>s.department.Id==departmentId);
+
            
         }
 

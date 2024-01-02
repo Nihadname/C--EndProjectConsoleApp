@@ -159,16 +159,25 @@ namespace C__EndProject.controller
             helperForColor.changeTextColor(ConsoleColor.Green, "deparment id  daxil edin");
             byte Id = byte.Parse(Console.ReadLine());
             var Result=employeeService.GetAllWithDepartmentId(Id);
-            if (Result.Count > 0)
+            if (Result != null)
             {
-                foreach (var result in Result)
+                if (Result.Count > 0)
                 {
-                    Console.WriteLine(result);
+                    foreach (var result in Result)
+                    {
+                        Console.WriteLine(result);
+                    }
+                }
+                else
+                {
+                    helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
+
                 }
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessagesForEmptyCases);
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessageForCasesWhenIdDoesntMatch);
+
 
             }
         }

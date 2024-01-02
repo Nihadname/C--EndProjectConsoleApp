@@ -96,7 +96,7 @@ namespace C__EndProject.Business.Services
 
         public List<Employee> GetAllWithDepartmentName(string departmentName)
         {
-           return employeeRepository.GetAll(s=>s.department.Name==departmentName);
+           return employeeRepository.GetAll(s=>s.department.Name.ToUpper()==departmentName.ToUpper());
         }
 
         public List<Employee> GetAll(string Name)
@@ -108,7 +108,7 @@ namespace C__EndProject.Business.Services
         {
             var ExistedEmployee=employeeRepository.Get(s=>s.Id == id);
             if (ExistedEmployee is null) return null;
-            var ExistedDeparment=deparmentRepository.Get(s=>s.Name == groupName);
+            var ExistedDeparment=deparmentRepository.Get(s=>s.Name.Equals(groupName,StringComparison.OrdinalIgnoreCase));
             if (ExistedDeparment is null) return null;
             if(!string.IsNullOrEmpty(employee.Name))
             {

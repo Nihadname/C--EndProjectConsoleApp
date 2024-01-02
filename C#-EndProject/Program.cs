@@ -8,7 +8,8 @@ Console.WriteLine("Hello, World!");
 EmployeeController employeeController = new EmployeeController();
 DepartmentController departmentController = new DepartmentController();
 //MenusForEmployess menusForEmployess = new MenusForEmployess();
-helperForColor.changeTextColor(ConsoleColor.Green, @"
+helperForColor.changeTextColor(ConsoleColor.Blue, @"
+ 
  █     █░▓█████  ██▓     ▄████▄   ▒█████   ███▄ ▄███▓▓█████    ▄▄▄█████▓ ▒█████      ▒█████   █    ██  ██▀███      ▄▄▄       ██▓███   ██▓███  
 ▓█░ █ ░█░▓█   ▀ ▓██▒    ▒██▀ ▀█  ▒██▒  ██▒▓██▒▀█▀ ██▒▓█   ▀    ▓  ██▒ ▓▒▒██▒  ██▒   ▒██▒  ██▒ ██  ▓██▒▓██ ▒ ██▒   ▒████▄    ▓██░  ██▒▓██░  ██▒
 ▒█░ █ ░█ ▒███   ▒██░    ▒▓█    ▄ ▒██░  ██▒▓██    ▓██░▒███      ▒ ▓██░ ▒░▒██░  ██▒   ▒██░  ██▒▓██  ▒██░▓██ ░▄█ ▒   ▒██  ▀█▄  ▓██░ ██▓▒▓██░ ██▓▒
@@ -19,6 +20,7 @@ helperForColor.changeTextColor(ConsoleColor.Green, @"
   ░   ░     ░     ░ ░   ░        ░ ░ ░ ▒  ░      ░      ░        ░      ░ ░ ░ ▒     ░ ░ ░ ▒   ░░░ ░ ░   ░░   ░      ░   ▒   ░░       ░░       
     ░       ░  ░    ░  ░░ ░          ░ ░         ░      ░  ░                ░ ░         ░ ░     ░        ░              ░  ░                  
                         ░                                                                                                                     
+
 ");
 
  helperForColor.changeTextColor(ConsoleColor.Blue, "you have some options to choose among them");
@@ -56,7 +58,7 @@ while (true)
 
     string menu = Console.ReadLine();
     bool result = int.TryParse(menu, out int intMenu);
-    if (result && intMenu > 0 && intMenu < 18)
+    if (result && intMenu > 0 && intMenu < 21)
     {
         switch(intMenu)
         {

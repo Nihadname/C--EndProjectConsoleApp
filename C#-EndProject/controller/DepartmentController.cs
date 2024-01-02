@@ -89,10 +89,15 @@ namespace C__EndProject.controller
             string number = Console.ReadLine();
             bool result = int.TryParse(number, out int GroupCount);
             var GettingById = departmentService.Get(GroupCount);
-            Console.WriteLine(GettingById);
-                if(GettingById == null)
+                if(GettingById != null)
             {
-                helperForColor.changeTextColor(ConsoleColor.Red, "bele bir department id yoxdur");
+                Console.WriteLine(GettingById);
+
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.MessageForCasesWhenIdDoesntMatch);
+
 
             }
 

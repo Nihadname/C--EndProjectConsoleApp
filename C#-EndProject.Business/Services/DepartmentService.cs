@@ -63,6 +63,10 @@ namespace C__EndProject.Business.Services
 
         public Department Get(int id)
         {
+            if(_Deparmentrepository.Get(s=>s.Id==id) == null)
+            {
+                return null;
+            }
             return _Deparmentrepository.Get(s=>s.Id==id);
         }
 

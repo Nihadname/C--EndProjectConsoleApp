@@ -70,7 +70,11 @@ namespace C__EndProject.Business.Services
 
         public Employee get(int id)
         {
+            if(employeeRepository.Get(s=>s.Id== id) == null){
+                return null;
+            }
          return  employeeRepository.Get(s=>s.Id==id);
+            
         }
 
         public List<Employee> GetAll(int age)

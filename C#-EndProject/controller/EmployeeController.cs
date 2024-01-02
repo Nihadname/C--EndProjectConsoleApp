@@ -126,7 +126,14 @@ namespace C__EndProject.controller
             string number = Console.ReadLine();
             bool result = int.TryParse(number, out int GroupCount);
             var GettingById = employeeService.get(GroupCount);
-            Console.WriteLine(GettingById);
+            if(GettingById != null) {
+                Console.WriteLine(GettingById);
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.ErroMessage);
+
+            }
         }
         public void GetAllWithAge()
         {

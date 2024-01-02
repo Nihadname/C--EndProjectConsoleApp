@@ -131,7 +131,7 @@ namespace C__EndProject.controller
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.ErroMessage);
+                helperForColor.changeTextColor(ConsoleColor.Green, MessagesForCases.MessageForCasesWhenIdDoesntMatch);
 
             }
         }

@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using C__EndProject.controller;
 using C__EndProject.Helpers;
+using System.Media;
 using static C__EndProject.Helpers.MenusForDepartments;
 using static C__EndProject.Helpers.MenusForEmployess;
 
@@ -24,10 +25,23 @@ helperForColor.changeTextColor(ConsoleColor.Blue, @"
 ");
 
  helperForColor.changeTextColor(ConsoleColor.Blue, "you have some options to choose among them");
-helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bottom part");
+ helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bottom part");   
+  
 
 
+if (OperatingSystem.IsWindows())
+{
+    SoundPlayer soundPlayer = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\music2.wav");
+    soundPlayer.PlaySync();
+    soundPlayer.Stop();
 
+}
+if (OperatingSystem.IsWindows())
+{
+    SoundPlayer soundPlayer1 = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\Brian Eno - An Ending (Ascent) (Remastered 2019).wav");
+    //soundPlayer1.PlaySync();
+    soundPlayer1.PlayLooping();
+}
 
 while (true)
 {
@@ -54,7 +68,7 @@ while (true)
     "20. Update Department\n" +
     "0. Left Menu"
 );
-
+    
 
     string menu = Console.ReadLine();
     bool result = int.TryParse(menu, out int intMenu);
@@ -140,3 +154,4 @@ while (true)
 
 
 }
+

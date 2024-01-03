@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\C#-EndProject.DataContext\C#-EndProject.DataContext.csproj" />
     <ProjectReference Include="..\C#-EndProject.Domain\C#-EndProject.Domain.csproj" />
   </ItemGroup>

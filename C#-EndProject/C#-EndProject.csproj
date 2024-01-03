@@ -9,8 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\C#-EndProject.Business\C#-EndProject.Business.csproj" />
     <ProjectReference Include="..\C#-EndProject.Helpers\C#-EndProject.Helpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Brian Eno - An Ending %28Ascent%29 %28Remastered 2019%29.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="music2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

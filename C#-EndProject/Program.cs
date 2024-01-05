@@ -36,12 +36,12 @@ if (OperatingSystem.IsWindows())
     soundPlayer.Stop();
 
 }
-if (OperatingSystem.IsWindows())
-{
-    SoundPlayer soundPlayer1 = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\Brian Eno - An Ending (Ascent) (Remastered 2019).wav");
+//if (OperatingSystem.IsWindows())
+//{
+  //  SoundPlayer soundPlayer1 = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\Brian Eno - An Ending (Ascent) (Remastered 2019).wav");
     //soundPlayer1.PlaySync();
-    soundPlayer1.PlayLooping();
-}
+  //  soundPlayer1.PlayLooping();
+//}
 
 while (true)
 {
@@ -154,4 +154,5 @@ while (true)
 
 
 }
+
 

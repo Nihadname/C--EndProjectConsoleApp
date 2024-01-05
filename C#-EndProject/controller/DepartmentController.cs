@@ -35,16 +35,16 @@ namespace C__EndProject.controller
                 var createdgroup =departmentService.Create(department);
                 if(createdgroup != null)
                 {
-                    helperForColor.changeTextColor(ConsoleColor.Yellow, $"{department.Name}  is created succesfully");
+                    helperForColor.changeTextColor(ConsoleColor.Yellow, $"{department.Name} created "+MessagesForCases.MessagePartWhichIsForPositiveCases);
                 }
                 else
                 {
-                    helperForColor.changeTextColor(ConsoleColor.Red, "something went wrong");
+                    helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.ErroMessage);
                 }
             }
             else
             {
-                helperForColor.changeTextColor(ConsoleColor.Red, "write size of group properly"); ;
+                helperForColor.changeTextColor(ConsoleColor.Red,  MessagesForCases.MessageForDepartmentSize); ;
 
             }
         }
@@ -108,9 +108,17 @@ namespace C__EndProject.controller
             string number = Console.ReadLine();
             bool result = int.TryParse(number, out int GroupCount);
             var GettingById = departmentService.GetAll(GroupCount);
-            foreach( var item in GettingById)
+            if (GettingById.Count > 0)
             {
-                Console.WriteLine(item);
+                foreach (var item in GettingById)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                helperForColor.changeTextColor(ConsoleColor.Red, MessagesForCases.ErroMessage);
+
             }
         }
         public void DeleteDepartment()

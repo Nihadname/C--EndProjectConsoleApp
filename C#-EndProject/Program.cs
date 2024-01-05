@@ -5,6 +5,7 @@ using System.Media;
 using static C__EndProject.Helpers.MenusForDepartments;
 using static C__EndProject.Helpers.MenusForEmployess;
 
+
 Console.WriteLine("Hello, World!");
 EmployeeController employeeController = new EmployeeController();
 DepartmentController departmentController = new DepartmentController();
@@ -80,6 +81,13 @@ while (true)
                 employeeController.CreateEmployee();
                 break;
             case (int)MenusForEmployess.getAllEmployee:
+                if (OperatingSystem.IsWindows())
+                {
+                    SoundPlayer soundPlayer1 = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\here are all the employee 1.wav");
+                    soundPlayer1.PlaySync();
+                    soundPlayer1.Stop();
+
+                }
                 employeeController.GetAllEmployee();
                 break;
             case (int)MenusForEmployess.GetAllWithNames:
@@ -119,6 +127,13 @@ while (true)
                 departmentController.createDepartment();
                 break;
             case (int)MenusForDepartments.getAllDepartments:
+                if (OperatingSystem.IsWindows())
+                {
+                    SoundPlayer sound = new SoundPlayer(@"C:\Users\nihad\source\repos\C#-EndProject\C#-EndProject\here are all the Departme 1.wav");
+                    sound.PlaySync();
+                    sound.Stop();
+
+                }
                 departmentController.GetAllDepartment();
                 break;
             case (int)MenusForDepartments.GetWithName:

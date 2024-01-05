@@ -12,6 +12,7 @@ namespace C__EndProject.Business.Services
     public class DepartmentService : IDepartment
     {
         private readonly DeparmentRepository _Deparmentrepository;
+        private readonly EmployeeRepository _EmployeeRepository;
         private static int Count = 1;
        
 
@@ -19,6 +20,7 @@ namespace C__EndProject.Business.Services
         public DepartmentService()
         {
             _Deparmentrepository = new DeparmentRepository();
+            _EmployeeRepository = new EmployeeRepository();
         }
         public Department Create(Department department)
         {
@@ -50,8 +52,10 @@ namespace C__EndProject.Business.Services
         public Department Delete(int id)
         {
             var ExistedDepartment = _Deparmentrepository.Get(s => s.Id == id);
+            var ExistedDepartmentEmployees=_EmployeeRepository.Get(s => s.department.Id == id);
             if (ExistedDepartment is null) return null;
-            if (_Deparmentrepository.Delete(ExistedDepartment)){
+            if (ExistedDepartmentEmployees is null) return null;
+            if (_Deparmentrepository.Delete(ExistedDepartment)&&_EmployeeRepository.Delete(ExistedDepartmentEmployees)){
                 return ExistedDepartment;
             }
             else

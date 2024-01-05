@@ -16,7 +16,7 @@ namespace C__EndProject.Business.Services
         private readonly EmployeeRepository employeeRepository;
         private readonly DeparmentRepository deparmentRepository;
         private static int Counter = 1;
-        private double revenue = 1000000; // Initial revenue
+        private double revenue = 1000000; 
         private DateTime currentDate = DateTime.Now;
         public double GetUpdatedRevenue()
         {
@@ -162,7 +162,7 @@ namespace C__EndProject.Business.Services
 
 
             Random random = new Random();
-            double randomIncrease = random.Next(1000, 5000); // Random monthly increase
+            double randomIncrease = random.Next(1000, 5000); 
             revenue += randomIncrease;
         }
 

@@ -51,18 +51,27 @@ namespace C__EndProject.Business.Services
 
         public Department Delete(int id)
         {
-            var ExistedDepartment = _Deparmentrepository.Get(s => s.Id == id);
-            var ExistedDepartmentEmployees=_EmployeeRepository.Get(s => s.department.Id == id);
-            if (ExistedDepartment is null) return null;
-            if (ExistedDepartmentEmployees is null) return null;
-            if (_Deparmentrepository.Delete(ExistedDepartment)&&_EmployeeRepository.Delete(ExistedDepartmentEmployees)){
-                return ExistedDepartment;
+            var existedDepartment = _Deparmentrepository.Get(s => s.Id == id);
+            if (existedDepartment == null) return null;
+
+            var existedDepartmentEmployees = _EmployeeRepository.GetAll(s => s.department.Id == existedDepartment.Id);
+
+            if (existedDepartmentEmployees != null && existedDepartmentEmployees.Any())
+            {
+                foreach (var employee in existedDepartmentEmployees)
+                {
+                    _EmployeeRepository.Delete(employee);
+                }
+            }
+
+            if (_Deparmentrepository.Delete(existedDepartment))
+            {
+                return existedDepartment;
             }
             else
             {
                 return null;
             }
-
         }
 
         public Department Get(int id)

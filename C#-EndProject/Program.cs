@@ -47,6 +47,9 @@ helperForColor.changeTextColor(ConsoleColor.Cyan, @"
 
 ");
 
+
+
+
  helperForColor.changeTextColor(ConsoleColor.Blue, "you have some options to choose among them");
  helperForColor.changeTextColor(ConsoleColor.Blue, "options will appear in the bottom part");   
   

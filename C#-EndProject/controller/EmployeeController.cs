@@ -263,25 +263,7 @@ namespace C__EndProject.controller
 
         }
 
-        public void GeneralRevenueController()
-        {
-            helperForColor.changeTextColor(ConsoleColor.Red, "Enter the number of months to simulate:");
-
-            int number = int.Parse(Console.ReadLine());
-
-            employeeService.GeneralRevenueController(number); 
-
-            
-            Console.WriteLine("Simulation completed for " + number + " months.");
-            List<Employee> employees = employeeService.GetAll();
-            
-            foreach (var emp in employees)
-            {
-                Console.WriteLine($"Employee: {emp.Name} {emp.SurName}, Salary: {emp.Salary}");
-            }
-            
-            Console.WriteLine("Updated revenue: " + employeeService.GetUpdatedRevenue());
-        }
+      
       public  void getAllWithSalary()
         {
             helperForColor.changeTextColor(ConsoleColor.Red, "Enter the number:");

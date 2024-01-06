@@ -14,7 +14,8 @@ namespace C__EndProject.Business.Services
         private readonly DeparmentRepository _Deparmentrepository;
         private readonly EmployeeRepository _EmployeeRepository;
         private static int Count = 1;
-       
+        private DateTime currentDate = DateTime.Now;
+
 
 
         public DepartmentService()
@@ -51,7 +52,19 @@ namespace C__EndProject.Business.Services
             }
 
         }
+        public double GetUpdatedRevenue()
+        {
+            var departments = _Deparmentrepository.GetAll(); // Assuming this retrieves all departments
 
+            double totalRevenue = 0;
+
+            foreach (var department in departments)
+            {
+                totalRevenue += department.revenue;
+            }
+
+            return totalRevenue;
+        }
         public Department Delete(int id)
         {
             var existedDepartment = _Deparmentrepository.Get(s => s.Id == id);
@@ -117,7 +130,20 @@ ExistedDepartment.Capacity = department.Capacity;
             if (_Deparmentrepository.Update(department)) return ExistedDepartment;
             return null;
         }
+        public void GeneralRevenueController(int num)
 
-        
+        {
+            currentDate = currentDate.AddMonths(num);
+
+
+            Random random = new Random();
+            double randomIncrease = random.Next(1000, 5000);
+            foreach (var department in _Deparmentrepository.GetAll())
+            {
+                department.revenue += randomIncrease;
+            }
+        }
+
+
     }
 }

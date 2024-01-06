@@ -23,7 +23,6 @@ namespace C__EndProject.Business.interfaces
         
 
         void HireEmployeeAndUpdateRevenue(Employee employee);
-      void  GeneralRevenueController(int num);
         List<Employee> getAllWithSalary(int num);
 
     }

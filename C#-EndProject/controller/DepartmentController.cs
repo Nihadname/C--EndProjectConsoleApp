@@ -12,9 +12,11 @@ namespace C__EndProject.controller
     public class DepartmentController
     {
         private readonly DepartmentService departmentService;
+        private readonly  EmployeeService  employeeService;
         public DepartmentController()
         {
             departmentService = new DepartmentService();
+            employeeService = new EmployeeService();
         }
         public void createDepartment()
         {
@@ -164,6 +166,26 @@ namespace C__EndProject.controller
                 }
             }
 
+        }
+
+        public void GeneralRevenueController()
+        {
+            helperForColor.changeTextColor(ConsoleColor.Red, "Enter the number of months to simulate:");
+
+            int number = int.Parse(Console.ReadLine());
+
+            departmentService.GeneralRevenueController(number);
+
+
+            Console.WriteLine("Simulation completed for " + number + " months.");
+            List<Employee> employees = employeeService.GetAll();
+
+            foreach (var emp in employees)
+            {
+                Console.WriteLine($"Employee: {emp.Name} {emp.SurName}, Salary: {emp.Salary}");
+            }
+
+            Console.WriteLine("Updated revenue: " + departmentService.GetUpdatedRevenue());
         }
     }
 }

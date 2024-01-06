@@ -11,6 +11,7 @@ namespace C__EndProject.Domain
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
+        public  double revenue = 1000000;
 
         public override string ToString()
         {

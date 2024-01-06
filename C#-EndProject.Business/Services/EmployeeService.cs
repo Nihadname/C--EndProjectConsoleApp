@@ -16,12 +16,7 @@ namespace C__EndProject.Business.Services
         private readonly EmployeeRepository employeeRepository;
         private readonly DeparmentRepository deparmentRepository;
         private static int Counter = 1;
-        private double revenue = 1000000; 
-        private DateTime currentDate = DateTime.Now;
-        public double GetUpdatedRevenue()
-        {
-            return revenue;
-        }
+       
         public EmployeeService()
         {
             employeeRepository = new EmployeeRepository();
@@ -156,19 +151,10 @@ namespace C__EndProject.Business.Services
         public void HireEmployeeAndUpdateRevenue(Employee employee)
         {
             double salary = employee.Salary;
-            revenue -= salary * 1.5;
+            employee.department.revenue -= salary * 1.5; 
         }
 
-        public void GeneralRevenueController(int num)
-
-        {
-            currentDate = currentDate.AddMonths(num);
-
-
-            Random random = new Random();
-            double randomIncrease = random.Next(1000, 5000); 
-            revenue += randomIncrease;
-        }
+        
 
 
         public List<Employee> getAllWithSalary(int num)

@@ -127,7 +127,7 @@ while (true)
                 employeeController.UpdateEmployee();
                 break;
             case (int)MenusForEmployess.GeneralRevenueController:
-                employeeController.GeneralRevenueController();
+                departmentController.GeneralRevenueController();
                 break;
             case (int)MenusForEmployess.getAllWithSalary:
                 employeeController.getAllWithSalary();

@@ -30,8 +30,11 @@ namespace C__EndProject.Business.Services
             {
                 return null;
             }
-          
 
+            if (department.Capacity < 0)
+            {
+                return null;
+            }
             bool Creating = _Deparmentrepository.Create(department);
             if (Creating )
             {

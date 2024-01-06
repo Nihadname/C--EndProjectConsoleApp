@@ -41,6 +41,10 @@ namespace C__EndProject.Business.Services
             {
                 return null; 
             }
+            if (employee.age > 65 || employee.age < 18)
+            {
+                return null;
+            }
             employee.department = ExistedDepartmenName;
             employee.Id=Counter++;
             

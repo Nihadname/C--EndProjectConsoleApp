@@ -15,9 +15,10 @@ namespace C__EndProject.Domain
         public string address { get; set; }
         public int Salary { get; set; }
         public Department department { get; set; }
+        public DateTime CreatedTime { get; set; }
         public override string ToString()
         {
-            return $" ad {Name}  soyad:{SurName} id: {Id} salary{Salary}";
+            return $" ad {Name}  soyad:{SurName} id: {Id} salary{Salary}   createdTime {CreatedTime}";
         }
     }
 }

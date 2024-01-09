@@ -64,7 +64,7 @@ namespace C__EndProject.controller
                 {
                     foreach (Employee emp in employeeGetsAll)
                     {
-                        streamWriter.WriteLine($"Name{emp.Name} SurName{emp.SurName}");
+                        streamWriter.WriteLine($"Name{emp.Name} SurName{emp.SurName} createdTime {emp.CreatedTime}");
 
                     }
                 }
@@ -107,7 +107,7 @@ namespace C__EndProject.controller
                 foreach (var result in Result)
                 {
 
-                    helperForColor.changeTextColor(ConsoleColor.Green, $"{result.Name} {result.SurName}");
+                    helperForColor.changeTextColor(ConsoleColor.Green, $"{result.Name} {result.SurName}  {result.CreatedTime}");
 
 
 

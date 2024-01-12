@@ -40,6 +40,10 @@ namespace C__EndProject.Business.Services
             {
                 return null;
             }
+            if (employee.Salary > ExistedDepartmenName.revenue)
+            {
+                return null;
+            }
             employee.department = ExistedDepartmenName;
             employee.Id=Counter++;
             
